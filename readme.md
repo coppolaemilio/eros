@@ -45,8 +45,16 @@ To be done!
 
 ### Anything else
 Anything else that is not included here can be complemented with the default functions and libraries made for [löve](https://www.love2d.org/).
+
 ## Dependencies
 🎶 All you need is [löve](https://www.love2d.org/) ~
+
+## Workflow
+I'm using Atom editor to work on löve games with the following packages:
+- [Build](https://atom.io/packages/build)
+- [language-lua](https://atom.io/packages/language-lua)
+
+
 ## License
 ```
 Copyright (C) 2015 Emilio Coppola <emilio@evelend.com>
