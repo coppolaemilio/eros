@@ -54,6 +54,24 @@ function create_sprite(path, image_number, xoffset, yoffset)
   sprite.width = sprite.love_sprite:getWidth()
   sprite.height = sprite.love_sprite:getHeight()
   sprite.image_width = sprite.width/sprite.image_number
+  sprite.image_height = sprite.height
+  if xoffset == nil then xoffset = 0 end
+  if yoffset == nil then yoffset = 0 end
+  sprite.xoffset = xoffset
+  sprite.yoffset = yoffset
+  sprite.love_sprite:setFilter('nearest','nearest')
+  return sprite
+end
+
+function create_tileset(path, image_number, width, height, xoffset, yoffset)
+  sprite = {
+    love_sprite = love.graphics.newImage( path ),
+    image_number = image_number
+  }
+  sprite.width = sprite.love_sprite:getWidth()
+  sprite.height = sprite.love_sprite:getHeight()
+  sprite.image_width = width
+  sprite.image_height = height
   if xoffset == nil then xoffset = 0 end
   if yoffset == nil then yoffset = 0 end
   sprite.xoffset = xoffset
@@ -130,6 +148,20 @@ function draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_ys
         sprite_index.xoffset, sprite_index.yoffset
     )
     love.graphics.setColor(r,g,b,a)
+end
+
+function draw_tile(sprite_index, image_index, row_index, x, y, size)
+    -- Sprites are tables with different properties
+    local _image_index = math.floor(image_index)
+    local _row_index = math.floor(row_index)
+
+    local quad = love.graphics.newQuad(
+        sprite_index.image_width * (_image_index),
+        sprite_index.image_width * (_row_index),
+        sprite_index.image_width, sprite_index.image_width,
+        sprite_index.width, sprite_index.height
+    )
+    love.graphics.draw(sprite_index.love_sprite,quad,x,y,0,size,size,sprite_index.xoffset,sprite_index.yoffset)
 end
 
 function draw_text(x,y,text)

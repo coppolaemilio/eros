@@ -39,8 +39,10 @@ end
 
 function love.draw()
   room_draw()
-  for j = 1, #room.instances do
-    room.instances[j]:draw()
+  if room.instances then
+    for j = 1, #room.instances do
+      room.instances[j]:draw()
+    end
   end
   game.draw()
   draw_transition()

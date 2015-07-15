@@ -2,15 +2,15 @@
 Eros is a [löve](https://www.love2d.org/) framework to make game development easy.
 
 ## How to use
-Add this to the first line of your main.lua file:
+Copy the eros directory to the root of your project and then add this to the first line of your main.lua file:
 ```lua
 require 'eros'
 ```
-This will add everything you need to start using the power of Eros.
+This will add everything you need to start working with Eros.
 
 ## Game elements
-All the naming convetions is straight out of GM:S. I didn't wanted to create a new standard since many people (like me) already memorized all the names and workflow.
-A GML to lua translation will be made at some point for easy porting of pre-existing projects.
+All the naming conventions is straight out of GM:S. I didn't wanted to create a new standard since many people (like me) already memorized all the names and workflow.
+A GML to Lua translation tool can be made at some point for easy porting of pre-existing projects.
 
 ### Sprites
 You can include sprites in your game by using the "create_sprite" function.
@@ -40,8 +40,12 @@ room_a = {
   }
 }
 ```
-### Sounds
-To be done!
+
+## Roadmap
+- Sounds and music
+- Optimize newQuad on sprite create instead of draw event
+- Tile sets
+- Create executable from project
 
 ### Anything else
 Anything else that is not included here can be complemented with the default functions and libraries made for [löve](https://www.love2d.org/).
