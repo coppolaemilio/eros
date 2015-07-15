@@ -229,6 +229,19 @@ function window_set_cursor(cursor)
     end
 end
 
+-- Background functions
+function create_background(path)
+  back = love.graphics.newImage(path)
+  back:setFilter('nearest','nearest')
+  return back
+end
+
+function draw_background(b_index, x, y)
+  love.graphics.draw(b_index,x,y)
+end
+
+--
+
 function window_set_size(width, height)
   return love.window.setMode( width, height)
 end
