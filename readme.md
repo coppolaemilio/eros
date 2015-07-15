@@ -17,6 +17,18 @@ You can include sprites in your game by using the "create_sprite" function.
 ```lua
 create_sprite(path, image_number, xoffset, yoffset)
 ```
+### Backgrounds
+Backgrounds are sprites with less properties and closely related with the rooms.
+To add a background:
+```lua
+background_test = create_sprite(path)
+```
+If you want to set a background on a room:
+```lua
+example_room = {
+  background_image = background_test
+}
+```
 ### Objects
 Objects are based on [SECL](https://github.com/bartbes/love-misc-libs/tree/master/SECL) class system. To create one is as simple as:
 ```lua
@@ -35,6 +47,7 @@ create_font (fontname, size)
 ```lua
 room_a = {
   background_color = {100, 100, 100},
+  background_image = background_test,
   instances = {
     instance_create(120, 20, obj_test)
   }

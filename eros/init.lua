@@ -44,6 +44,9 @@ function love.draw()
       room.instances[j]:draw()
     end
   end
+  if room.background_image then
+    draw_background(room.background_image, 0, 0)
+  end
   game.draw()
   draw_transition()
 end
