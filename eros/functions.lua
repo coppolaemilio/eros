@@ -130,6 +130,16 @@ function draw_sprite(sprite_index, image_index, x, y)
     love.graphics.draw(sprite_index.love_sprite,quad,x,y,0,1,1,sprite_index.xoffset,sprite_index.yoffset)
 end
 
+function create_background(path)
+  back = love.graphics.newImage(path)
+  back:setFilter('nearest','nearest')
+  return back
+end
+
+function draw_background(b_index, x, y)
+  love.graphics.draw(b_index,x,y)
+end
+
 function draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, color, image_alpha)
     r, g, b, a = love.graphics.getColor()
     love.graphics.setColor(color,alpha)
@@ -228,19 +238,6 @@ function window_set_cursor(cursor)
         love.mouse.setCursor(cursor)
     end
 end
-
--- Background functions
-function create_background(path)
-  back = love.graphics.newImage(path)
-  back:setFilter('nearest','nearest')
-  return back
-end
-
-function draw_background(b_index, x, y)
-  love.graphics.draw(b_index,x,y)
-end
-
---
 
 function window_set_size(width, height)
   return love.window.setMode( width, height)

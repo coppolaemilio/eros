@@ -1,3 +1,4 @@
+-- Game Maker key names
 vk_enter = "return"
 vk_escape = "escape"
 vk_up = "up"
