@@ -53,6 +53,8 @@ room_a = {
   }
 }
 ```
+### Camera
+The camera needs to be adapted for a easier use and document.
 
 ## Roadmap
 - Sounds and music
